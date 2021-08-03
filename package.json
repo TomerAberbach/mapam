@@ -1,0 +1,65 @@
+{
+  "name": "mapam",
+  "version": "0.0.0",
+  "author": {
+    "name": "Tomer Aberbach",
+    "email": "tomeraberbach@gmail.com",
+    "url": "https://tomeraberba.ch"
+  },
+  "description": "A bidirectional Map/WeakMap implementation with the same API as an ES6 Map/WeakMap!",
+  "keywords": [
+    "bidirectional map",
+    "bidirectional",
+    "bimap",
+    "bidimap",
+    "map",
+    "weakmap",
+    "bijection"
+  ],
+  "homepage": "https://github.com/TomerAberbach/mapam",
+  "repository": "TomerAberbach/mapam",
+  "bugs": {
+    "url": "https://github.com/TomerAberbach/mapam/issues"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "src",
+    "dist/index.js"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">= 12.17"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not op_mini all"
+  ],
+  "exports": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "prepare": "tomer install",
+    "lint": "tomer lint -g",
+    "test": "tomer test",
+    "build": "tomer build src/index.js"
+  },
+  "terser": {
+    "keep_classnames": true,
+    "mangle": {
+      "properties": {
+        "regex": "_.+"
+      }
+    }
+  },
+  "dependencies": {
+    "svkc": "0.0.1"
+  },
+  "devDependencies": {
+    "ava": "3.15.0",
+    "ava-fast-check": "4.0.2",
+    "fast-check": "2.17.0",
+    "tomer": "0.0.13",
+    "tsd": "0.17.0"
+  }
+}
