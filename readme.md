@@ -20,11 +20,11 @@
 
 ## Features
 
+- **Tiny:** less than 720 bytes minzipped including dependencies!
 - **Familiar:** uses the same API as an ES6 Map/WeakMap
 - **Compliant:** maintains all the invariants of Map/WeakMap including method
   return values and even iteration order!
-- **Smart:** handles negative zero correctly
-- **Tiny:** less than 720 bytes minzipped including dependencies!
+- **Correct:** handles [edge cases](#correctness) correctly
 
 ## Install
 
