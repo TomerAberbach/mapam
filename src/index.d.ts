@@ -23,7 +23,7 @@ export type BiMapSetOptions = {
    *
    * Defaults to false.
    */
-  force?: boolean
+  readonly force?: boolean
 }
 
 /**
@@ -40,17 +40,17 @@ export type BiMapSetOptions = {
  * Unlike `Map`, this class uses the SameValue algorithm instead of the
  * SameValueZero algorithm for determining uniqueness.
  */
-export class BiMap<K, V> extends Map<K, V> {
+export class BiMap<Key, Value> extends Map<Key, Value> {
   /**
    * Sets the given `key`-`value` pair on the bidirectional map.
    *
    * @throws if the given `value` is already bound to another key in the
    * bidirectional map, but {@link BiMapSetOptions.force} is not `true`.
    */
-  set(key: K, value: V, options?: BiMapSetOptions): this
+  public set(key: Key, value: Value, options?: BiMapSetOptions): this
 
   /** Returns the other side/view of the bidirectional map. */
-  inverse(): BiMap<V, K>
+  public inverse(): BiMap<Value, Key>
 }
 
 /**
@@ -66,18 +66,18 @@ export class BiMap<K, V> extends Map<K, V> {
  * returns the other side/view of the weak bidirectional map. Operations on
  * either side/view are quick.
  */
-export class WeakBiMap<K extends object, V extends object> extends WeakMap<
-  K,
-  V
-> {
+export class WeakBiMap<
+  Key extends WeakKey,
+  Value extends WeakKey,
+> extends WeakMap<Key, Value> {
   /**
    * Sets the given `key`-`value` pair on the weak bidirectional map.
    *
    * @throws if the given `value` is already bound to another key in the weak
    * bidirectional map, but {@link BiMapSetOptions.force} is not `true`.
    */
-  set(key: K, value: V, options?: BiMapSetOptions): this
+  public set(key: Key, value: Value, options?: BiMapSetOptions): this
 
   /** Returns the other side/view of the weak bidirectional map. */
-  inverse(): WeakBiMap<V, K>
+  public inverse(): WeakBiMap<Value, Key>
 }
