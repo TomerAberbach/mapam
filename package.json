@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": {
     "name": "Tomer Aberbach",
-    "email": "tomeraberbach@gmail.com",
+    "email": "tomer@aberba.ch",
     "url": "https://tomeraberba.ch"
   },
   "description": "A bidirectional Map/WeakMap implementation with the same API as an ES6 Map/WeakMap!",
